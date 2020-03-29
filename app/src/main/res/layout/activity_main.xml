@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainSwipeRefreshLayout"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/myWebProgressBar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_marginTop="-2dp"
+            android:progress="20"
+            android:visibility="gone" />
+
+        <WebView
+            android:id="@+id/myWebView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/noInternetRelativeLayout">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/warning"
+                android:layout_marginTop="50dp"
+                android:layout_marginHorizontal="60dp"
+                android:id="@+id/noInternetImage"
+                android:contentDescription="@string/no_internet_connection_image"
+                />
+
+            <TextView
+                android:id="@+id/noInternetText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/noInternetImage"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"
+                android:text="@string/no_internet_connection_image"
+                android:textSize="26sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/retry"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="60dp"
+                android:id="@+id/noInternetRetryBtn"
+                android:layout_below="@id/noInternetText" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
